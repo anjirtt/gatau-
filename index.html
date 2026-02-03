@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -11,527 +12,652 @@
       box-sizing: border-box;
       scroll-behavior: smooth;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }body {
-  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
-  color: white;
-  overflow-x: hidden;
-}
+    }
+    body {
+      background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+      color: white;
+      overflow-x: hidden;
+    }
 
-canvas#stars {
-  position: fixed;
-  top: 0; left: 0;
-  z-index: -1;
-}
+    canvas#stars {
+      position: fixed;
+      top: 0; left: 0;
+      z-index: -1;
+    }
 
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
-  background: rgba(0,0,0,0.5);
-  backdrop-filter: blur(10px);
-  position: fixed;
-  width: 100%;
-  top: 0;
-  z-index: 999;
-}
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background: rgba(0,0,0,0.5);
+      backdrop-filter: blur(10px);
+      position: fixed;
+      width: 100%;
+      top: 0;
+      z-index: 999;
+    }
 
-.logo {
-  font-weight: bold;
-  font-size: 1.4em;
-  color: #00aaff;
-  text-decoration: none;
-}
+    .logo {
+      font-weight: bold;
+      font-size: 1.4em;
+      color: #00aaff;
+      text-decoration: none;
+    }
 
-.menu-toggle {
-  display: none;
-  font-size: 1.6em;
-  cursor: pointer;
-  color: #00aaff;
-}
+    .menu-toggle {
+      display: none;
+      font-size: 1.6em;
+      cursor: pointer;
+      color: #00aaff;
+    }
 
-nav {
-  display: flex;
-  gap: 15px;
-}
+    nav {
+      display: flex;
+      gap: 15px;
+    }
 
-nav a {
-  padding: 8px 15px;
-  border-radius: 20px;
-  background: transparent;
-  color: #00aaff;
-  border: 2px solid #00aaff;
-  text-decoration: none;
-  transition: 0.3s ease;
-}
+    nav a {
+      padding: 8px 15px;
+      border-radius: 20px;
+      background: transparent;
+      color: #00aaff;
+      border: 2px solid #00aaff;
+      text-decoration: none;
+      transition: 0.3s ease;
+    }
 
-nav a:hover, nav a.active {
-  background: #00aaff;
-  color: white;
-  transform: scale(1.05);
-}
+    nav a:hover, nav a.active {
+      background: #00aaff;
+      color: white;
+      transform: scale(1.05);
+    }
 
-.hidden {
-  display: none;
-}
+    .hidden {
+      display: none;
+    }
 
-section {
-  padding: 60px 20px 40px;
-  text-align: center;
-  min-height: 80vh;
-  opacity: 0;
-  transform: translateY(30px);
-  transition: 0.6s ease-out;
-}
+    section {
+      padding: 60px 20px 40px;
+      text-align: center;
+      min-height: 80vh;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: 0.6s ease-out;
+    }
 
-section.show {
-  opacity: 1;
-  transform: translateY(0);
-}
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-.home .profile-img {
-  width: 180px;
-  height: 180px;
-  border-radius: 50%;
-  border: 5px solid #00aaff;
-  box-shadow: 0 0 20px #00aaff;
-  overflow: hidden;
-  margin: 90px auto 25px;
-}
+    .home .profile-img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      border: 5px solid #00aaff;
+      box-shadow: 0 0 20px #00aaff;
+      overflow: hidden;
+      margin: 90px auto 25px;
+    }
 
-.profile-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+    .profile-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
 
-h1 span {
-  color: #00aaff;
-}
+    h1 span {
+      color: #00aaff;
+    }
 
-.typing-text, .typing-desc {
-  font-size: 1.3em;
-  margin-bottom: 15px;
-  min-height: 30px;
-}
+    .typing-text, .typing-desc {
+      font-size: 1.3em;
+      margin-bottom: 15px;
+      min-height: 30px;
+    }
 
-.description {
-  max-width: 600px;
-  margin: auto;
-  font-size: 1.1em;
-  color: #ccc;
-  min-height: 50px;
-}
+    .description {
+      max-width: 600px;
+      margin: auto;
+      font-size: 1.1em;
+      color: #ccc;
+      min-height: 50px;
+    }
 
-.social-buttons {
-  margin-top: 20px;
-}
+    .social-buttons {
+      margin-top: 20px;
+    }
 
-.social-buttons a {
-  display: inline-block;
-  margin: 10px 10px 0;
-  padding: 10px 20px;
-  border-radius: 30px;
-  background: #00aaff;
-  color: white;
-  text-decoration: none;
-  transition: 0.3s;
-}
+    .social-buttons a {
+      display: inline-block;
+      margin: 10px 10px 0;
+      padding: 10px 20px;
+      border-radius: 30px;
+      background: #00aaff;
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    }
 
-.social-buttons a:hover {
-  background-color: #008ecc;
-  transform: scale(1.05);
-}
+    .social-buttons a:hover {
+      background-color: #008ecc;
+      transform: scale(1.05);
+    }
 
-.section-title {
-  font-size: 2em;
-  margin-bottom: 20px;
-  color: #00aaff;
-}
+    .section-title {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #00aaff;
+    }
 
-.skills-container, .projects-container {
-  margin-top: 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 25px;
-}
+    .skills-container, .projects-container {
+      margin-top: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
 
-.skill-icon {
-  width: 80px;
-  height: 80px;
-  border-radius: 15px;
-  padding: 10px;
-  background: rgba(255,255,255,0.05);
-  border: 2px solid #00aaff;
-  box-shadow: 0 0 10px #00aaff22;
-  transition: 0.3s;
-}
+    .skill-icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 15px;
+      padding: 10px;
+      background: rgba(255,255,255,0.05);
+      border: 2px solid #00aaff;
+      box-shadow: 0 0 10px #00aaff22;
+      transition: 0.3s;
+    }
 
-.skill-icon:hover {
-  transform: scale(1.1);
-}
+    .skill-icon:hover {
+      transform: scale(1.1);
+    }
 
-.project-box {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid #00aaff;
-  padding: 20px;
-  border-radius: 15px;
-  width: 250px;
-  box-shadow: 0 0 10px #00aaff22;
-}
+    .project-box {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid #00aaff;
+      padding: 20px;
+      border-radius: 15px;
+      width: 250px;
+      box-shadow: 0 0 10px #00aaff22;
+    }
 
-footer {
-  text-align: center;
-  padding: 20px 10px 40px;
-  background: rgba(0,0,0,0.3);
-  font-size: 0.9em;
-  color: #aaa;
-  margin-top: -40px;
-}
+    footer {
+      text-align: center;
+      padding: 20px 10px 40px;
+      background: rgba(0,0,0,0.3);
+      font-size: 0.9em;
+      color: #aaa;
+      margin-top: -40px;
+    }
 
-.music-player {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background: #00aaff;
-  color: white;
-  padding: 15px;
-  border-radius: 50%;
-  box-shadow: 0 0 15px #00aaff;
-  cursor: pointer;
-  z-index: 1000;
-  transition: transform 0.5s ease;
-}
+    .music-player {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #00aaff;
+      color: white;
+      padding: 15px;
+      border-radius: 50%;
+      box-shadow: 0 0 15px #00aaff;
+      cursor: pointer;
+      z-index: 1000;
+      transition: transform 0.5s ease;
+    }
 
-.music-player.playing {
-  animation: spin 2s linear infinite;
-}
+    .music-player.playing {
+      animation: spin 2s linear infinite;
+    }
 
-@keyframes spin {
-  0% {transform: rotate(0deg);}
-  100% {transform: rotate(360deg);}
-}
+    @keyframes spin {
+      0% {transform: rotate(0deg);}
+      100% {transform: rotate(360deg);}
+    }
 
-/* Hosting section styles */
-.hosting-section {
-  background: rgba(0,0,0,0.2);
-  border-radius: 15px;
-  border: 1px solid #00aaff;
-  padding: 30px 20px;
-  margin: 20px auto;
-  max-width: 800px;
-  box-shadow: 0 0 20px #00aaff33;
-}
+    /* Hosting section styles - DITAMBAHKAN */
+    .hosting-section {
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 20px;
+      padding: 40px 30px;
+      max-width: 900px;
+      margin: 30px auto;
+      border: 2px solid #00aaff;
+      box-shadow: 0 0 30px rgba(0, 170, 255, 0.3);
+      position: relative;
+      overflow: hidden;
+    }
 
-.hosting-title {
-  color: #00aaff;
-  margin-bottom: 20px;
-  font-size: 1.8em;
-}
+    .hosting-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #00aaff, #ff00ff, #00aaff);
+    }
 
-.hosting-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  margin-bottom: 20px;
-}
+    .hosting-header {
+      margin-bottom: 30px;
+    }
 
-.hosting-item {
-  background: rgba(255,255,255,0.05);
-  border-radius: 10px;
-  padding: 15px;
-  transition: 0.3s;
-  border: 1px solid rgba(0,170,255,0.3);
-}
+    .hosting-title {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+      background: linear-gradient(90deg, #00aaff, #ff00ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      font-weight: bold;
+    }
 
-.hosting-item:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0,170,255,0.2);
-}
+    .hosting-subtitle {
+      color: #aaa;
+      font-size: 1.1em;
+      margin-bottom: 20px;
+    }
 
-.hosting-item h3 {
-  color: #00aaff;
-  margin-bottom: 10px;
-}
+    /* Efek typing untuk Next Gen Hosting */
+    .next-gen-typing {
+      font-size: 1.5em;
+      margin: 20px 0;
+      min-height: 40px;
+      color: #00aaff;
+      font-weight: bold;
+      border-right: 3px solid #00aaff;
+      display: inline-block;
+      padding-right: 5px;
+      animation: blink 0.7s infinite;
+    }
 
-.hosting-item p {
-  color: #ddd;
-  font-size: 0.95em;
-  margin-bottom: 10px;
-}
+    @keyframes blink {
+      0%, 100% { border-color: transparent; }
+      50% { border-color: #00aaff; }
+    }
 
-.payment-info {
-  background: rgba(0,170,255,0.1);
-  border-radius: 10px;
-  padding: 15px;
-  margin-top: 20px;
-  border: 1px dashed #00aaff;
-}
+    .hosting-features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      margin-bottom: 30px;
+    }
 
-.payment-info h3 {
-  color: #00aaff;
-  margin-bottom: 10px;
-}
+    .feature-item {
+      background: rgba(0, 170, 255, 0.1);
+      border-radius: 15px;
+      padding: 20px;
+      border: 1px solid rgba(0, 170, 255, 0.3);
+      transition: 0.3s;
+    }
 
-.contact-button {
-  display: inline-block;
-  margin: 10px 5px;
-  padding: 8px 15px;
-  border-radius: 20px;
-  background: #00aaff;
-  color: white;
-  text-decoration: none;
-  transition: 0.3s;
-}
+    .feature-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 170, 255, 0.2);
+      border-color: #00aaff;
+    }
 
-.contact-button:hover {
-  background: #008ecc;
-  transform: scale(1.05);
-}
+    .feature-item h3 {
+      color: #00aaff;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
 
-@media(max-width: 768px) {
-  nav {
-    flex-direction: column;
-    background: rgba(0,0,0,0.9);
-    position: absolute;
-    top: 60px;
-    right: 20px;
-    padding: 15px;
-    border-radius: 10px;
-    display: none;
-  }
+    .feature-item h3 i {
+      font-size: 1.2em;
+    }
 
-  nav.show {
-    display: flex;
-  }
+    .feature-item p {
+      color: #ddd;
+      font-size: 0.95em;
+      line-height: 1.5;
+    }
 
-  .menu-toggle {
-    display: block;
-  }
-}
+    .hosting-button {
+      display: inline-block;
+      padding: 15px 40px;
+      font-size: 1.2em;
+      font-weight: bold;
+      background: linear-gradient(90deg, #00aaff, #ff00ff);
+      color: white;
+      text-decoration: none;
+      border-radius: 50px;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 20px rgba(0, 170, 255, 0.4);
+      margin-top: 20px;
+      border: none;
+      cursor: pointer;
+    }
 
+    .hosting-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(0, 170, 255, 0.6);
+      background: linear-gradient(90deg, #ff00ff, #00aaff);
+    }
+
+    .hosting-button i {
+      margin-left: 10px;
+    }
+
+    .ddos-badge {
+      display: inline-block;
+      background: rgba(255, 0, 0, 0.2);
+      color: #ff5555;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 0.9em;
+      margin-top: 10px;
+      border: 1px solid rgba(255, 0, 0, 0.3);
+    }
+
+    @media(max-width: 768px) {
+      nav {
+        flex-direction: column;
+        background: rgba(0,0,0,0.9);
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 15px;
+        border-radius: 10px;
+        display: none;
+      }
+
+      nav.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+      
+      .hosting-title {
+        font-size: 2em;
+      }
+      
+      .hosting-section {
+        padding: 30px 20px;
+        margin: 20px 10px;
+      }
+      
+      .next-gen-typing {
+        font-size: 1.2em;
+      }
+    }
   </style>
 </head>
-<body><canvas id="stars"></canvas>
+<body>
+  <canvas id="stars"></canvas>
 
-<header>
-  <a class="logo"> 𝐝𝐡𝐞𝐤𝐳 𝐢𝐧𝐟𝐨😈</a>
-  <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
-  <nav id="navMenu">
-    <a href="#home" class="active">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-    <a href="#hosting">Hosting</a>
-  </nav>
-</header><section id="home" class="home">
-  <div class="profile-img">
-    <img src="https://files.catbox.moe/5u1fjh.png" alt="Profile" />
-  </div>
-  <h1>Hi, I'm <span> 𝐝𝐡𝐞𝐤𝐭𝐚 𝐢𝐬𝐡𝐞𝐫𝐞</span></h1>
-  <div class="typing-text" id="typing-role"></div>
-  <div class="typing-desc" id="typing-desc"></div>
-  <div class="social-buttons">
-    <a href="https://wa.me/6283871608187">WhatsApp</a>
-    <a href="https://t.me/zenith_239">Telegram</a>
-    <a href="https://youtube.com/@zenith_239">YouTube</a>
-  </div>
-</section><section id="skills">
-  <h2 class="section-title">Skills</h2>
-  <div class="skills-container">
-    <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
-    <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
-    <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS">
-    <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
-    <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash">
-  </div>
-</section><section id="about">
-  <h2 class="section-title">About Me</h2>
-  <p class="description">
-    My Name Is dhekta, I'm Just A Student Who Is Very Interested In Programming, And I'm A WhatsApp Bot Script Developer.
-  </p>
-</section><section id="projects">
-  <h2 class="section-title">Projects</h2>
-  <div class="projects-container">
-    <div class="project-box">
-      <h3>WhatsApp Bot</h3>
-      <p>Automation bot for WhatsApp using Node.js & Baileys.</p>
-    </div>
-    <div class="project-box">
-      <h3>Portfolio Website</h3>
-      <p>I Can Also Make A Simple Portfolio Like This Website.</p>
-    </div>
-  </div>
-</section><section id="contact">
-  <h2 class="section-title">Contact</h2>
-  <p class="description">Gmail Me: <b>dhektavioleza@Gmail.com</b></p>
-</section>
+  <header>
+    <a class="logo"> 𝐝𝐡𝐞𝐤𝐳 𝐢𝐧𝐟𝐨😈</a>
+    <i class="fas fa-bars menu-toggle" onclick="toggleMenu()"></i>
+    <nav id="navMenu">
+      <a href="#home" class="active">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+      <a href="#hosting">Hosting</a>
+    </nav>
+  </header>
 
-<!-- Added Hosting Section -->
-<section id="hosting">
-  <h2 class="section-title">dhekz marketplace</h2>
-  
-  <div class="hosting-section">
-    <h3 class="hosting-title">Our Services</h3>
-    
-    <div class="hosting-grid">
-      <div class="hosting-item">
-        <h3><i class="fas fa-server"></i> VPS Hosting</h3>
-        <p>High-performance VPS solutions with guaranteed resources and 99.9% uptime.</p>
-        <p>RAM 8 CORE 2 [𝗥𝗽𝟯𝟬.𝟬𝟬𝟬]</p>
-<p>RAM 8 CORE 4 [𝗥𝗽𝟯𝟱.𝟬𝟬𝟬]</p>
-<p>RAM 16 CORE 4 [𝗥𝗽𝟰𝟬.𝟬𝟬𝟬]</p>
-<p>RAM 16 CORE 8 [𝗥𝗽𝟱𝟬.𝟬𝟬𝟬]</p>
-<p>RAM 32 CORE 8 [𝗥𝗽𝟳𝟬.𝟬𝟬𝟬]</p>
+  <section id="home" class="home">
+    <div class="profile-img">
+      <img src="https://files.catbox.moe/2bz6dx.jpg" alt="Profile" />
+    </div>
+    <h1>Hi, I'm <span> 𝐝𝐡𝐞𝐤𝐭𝐚 𝐢𝐬𝐡𝐞𝐫𝐞</span></h1>
+    <div class="typing-text" id="typing-role"></div>
+    <div class="typing-desc" id="typing-desc"></div>
+    <div class="social-buttons">
+      <a href="https://wa.me/6283871608187">WhatsApp</a>
+      <a href="https://t.me/zenith_239">Telegram</a>
+      <a href="https://youtube.com/@zenith_239">YouTube</a>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2 class="section-title">Skills</h2>
+    <div class="skills-container">
+      <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+      <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+      <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JS">
+      <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python">
+      <img class="skill-icon" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" alt="Bash">
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title">About Me</h2>
+    <p class="description">
+      My Name Is dhekta, I'm Just A Student Who Is Very Interested In Programming, And I'm A WhatsApp Bot Script Developer.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2 class="section-title">Projects</h2>
+    <div class="projects-container">
+      <div class="project-box">
+        <h3>WhatsApp Bot</h3>
+        <p>Automation bot for WhatsApp using Node.js & Baileys.</p>
       </div>
-      
-      <div class="hosting-item">
-        <h3><i class="fab fa-whatsapp"></i> WhatsApp Bot Scripts</h3>
-        <p>Premium WhatsApp MD/BUG bot scripts with advanced features and regular updates.</p>
-        <p>Customizable and easy to deploy on your own server.</p>
-      </div>
-      
-      <div class="hosting-item">
-        <h3><i class="fas fa-bug"></i> </h3>
-        <p>Professional bug tracking and management system for your projects.</p>
-        <p>Secure and efficient way to manage issues and improvements.</p>
-      </div>
-      
-      <div class="hosting-item">
-        <h3><i class="fas fa-dragon"></i> Pterodactyl Panel</h3>
-        <p>Game server management panel with easy-to-use interface and powerful controls.</p>
-        <p>
-          PANEL PRIVATE</P>
-          <p>• 4GB : 𝗥𝗽𝟰.𝟬𝟬𝟬</p>
-          <p>• 5GB : 𝗥𝗽𝟱.𝟬𝟬𝟬 
-          <p>• 6GB : 𝗥𝗽𝟲.𝟬𝟬𝟬</p>
-          <p>• 7GB : 𝗥𝗽𝟳.𝟬𝟬𝟬</p>
-          <p>• 8GB : 𝗥𝗽𝟴.𝟬𝟬𝟬</p>
-          <p>• 10GB : 𝗥𝗽𝟵.𝟬𝟬𝟬</p>
-          <p>• UNLI PRIVATE : 𝗥𝗽𝟭𝟬.𝟬𝟬𝟬</p>
-          <p>• UNLI PUBLIC : 𝗥𝗽𝟱.𝟬𝟬𝟬</p>
+      <div class="project-box">
+        <h3>Portfolio Website</h3>
+        <p>I Can Also Make A Simple Portfolio Like This Website.</p>
       </div>
     </div>
-    
-    <div class="payment-info">
-      <h3><i class="fas fa-money-bill-wave"></i> Payment Methods</h3>
-      <p>We accept payments via:</p>
-      <p><i class="fas fa-wallet"></i> DANA: 085764130028</p>
-      <p><i class="fas fa-wallet"></i> GoPay: 085764130028</p>
-      
-      <h3><i class="fas fa-info-circle"></i> How to Order</h3>
-      <p>After payment, please send proof of payment to:</p>
-      <div>
-        <a href="https://wa.me/6283871608187" class="contact-button"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-        <a href="https://t.me/zenith_239" class="contact-button"><i class="fab fa-telegram"></i> Telegram</a>
+  </section>
+
+  <!-- BAGIAN HOSTING YANG DITAMBAHKAN -->
+  <section id="hosting">
+    <h2 class="section-title">Hosting Services</h2>
+    <div class="hosting-section">
+      <div class="hosting-header">
+        <h1 class="hosting-title">PREMIUM PTERODACTYL HOSTING</h1>
+        <!-- Area untuk efek typing Next Gen Hosting -->
+        <div class="next-gen-typing" id="next-gen-typing"></div>
+        <p class="hosting-subtitle">Infrastruktur cloud berkinerja tinggi yang dirancang untuk stabilitas Bot Discord, aplikasi Node.js, dan server game Anda.</p>
       </div>
+      
+      <div class="hosting-features">
+        <div class="feature-item">
+          <h3><i class="fas fa-shield-alt"></i> Keamanan Tinggi</h3>
+          <p>Server terlindungi dengan sistem keamanan multi-layer dan monitoring 24/7.</p>
+        </div>
+        
+        <div class="feature-item">
+          <h3><i class="fas fa-bolt"></i> Performa Optimal</h3>
+          <p>SSD NVMe cepat dan RAM berkualitas tinggi untuk performa maksimal.</p>
+        </div>
+        
+        <div class="feature-item">
+          <h3><i class="fas fa-headset"></i> Support 24/7</h3>
+          <p>Tim support siap membantu Anda kapan saja melalui berbagai platform.</p>
+        </div>
+        
+        <div class="feature-item">
+          <h3><i class="fas fa-sync-alt"></i> Uptime 99.9%</h3>
+          <p>Jaminan uptime tinggi dengan backup dan redundancy sistem.</p>
+        </div>
+      </div>
+      
+      <div class="ddos-badge">
+        🔒 Anti-DDoS Protected
+      </div>
+      
+      <!-- BUTTON YANG DIMINTA -->
+      <button class="hosting-button" onclick="window.open('https://dhekz-panel-shop.vercel.app/product', '_blank')">
+        Mulai Sekarang <i class="fas fa-arrow-right"></i>
+      </button>
+      
+      <p style="margin-top: 15px; color: #aaa; font-size: 0.9em;">
+        ©dhektaFX
+      </p>
     </div>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title">Contact</h2>
+    <p class="description">Gmail Me: <b>dhektavioleza@Gmail.com</b></p>
+  </section>
+
+  <footer>
+    ©𝐝𝐡𝐞𝐤𝐭𝐚𝐕𝐢𝐨𝐥𝐞𝐳𝐚 𝐢𝐬𝐡𝐞𝐫𝐞ϟ
+  </footer>
+
+  <div class="music-player" onclick="toggleMusic()">
+    <i class="fas fa-music"></i>
+    <audio id="bgMusic" src="https://files.catbox.moe/a5ncoy.mp3" loop autoplay></audio>
   </div>
-</section>
 
-<footer>
-  ©𝐝𝐡𝐞𝐤𝐭𝐚𝐕𝐢𝐨𝐥𝐞𝐳𝐚 𝐢𝐬𝐡𝐞𝐫𝐞ϟ
-</footer><div class="music-player" onclick="toggleMusic()">
-  <i class="fas fa-music"></i>
-  <audio id="bgMusic" src="https://files.catbox.moe/a5ncoy.mp3" loop autoplay></audio>
-</div><script>
-  const roles = ["Web Developer", "Script Creator", "Attacker", "Defacer"];
-  const desc = "Welcome to my portfolio. My name is dhekta violeza.p I'm a Developer, Defacer and Attacker.";
-  let roleIndex = 0, roleChar = 0, descChar = 0;
+  <script>
+    const roles = ["Web Developer", "Script Creator", "Attacker", "Defacer"];
+    const desc = "Welcome to my portfolio. My name is dhekta violeza.p I'm a Developer, Defacer and Attacker.";
+    let roleIndex = 0, roleChar = 0, descChar = 0;
 
-  function typeRole() {
-    const el = document.getElementById('typing-role');
-    if (roleChar < roles[roleIndex].length) {
-      el.textContent += roles[roleIndex][roleChar++];
-      setTimeout(typeRole, 100);
-    } else {
-      setTimeout(() => {
-        el.textContent = "";
-        roleChar = 0;
-        roleIndex = (roleIndex + 1) % roles.length;
-        typeRole();
-      }, 1500);
-    }
-  }
+    // Teks-teks untuk Next Gen Hosting yang akan berganti-ganti
+    const hostingTexts = [
+      "Next Gen Hosting.",
+      "High Performance Cloud.",
+      "Ultra Fast SSD NVMe.",
+      "24/7 Support Available.",
+      "99.9% Uptime Guarantee.",
+      "DDoS Protection Included."
+    ];
+    let hostingIndex = 0, hostingChar = 0;
+    let isDeleting = false;
+    let hostingTypingSpeed = 100;
 
-  function typeDesc() {
-    const el = document.getElementById('typing-desc');
-    if (descChar < desc.length) {
-      el.textContent += desc[descChar++];
-      setTimeout(typeDesc, 40);
-    }
-  }
-
-  function revealOnScroll() {
-    document.querySelectorAll("section").forEach(sec => {
-      const top = sec.getBoundingClientRect().top;
-      if (top < window.innerHeight * 0.85) sec.classList.add("show");
-    });
-  }
-
-  function toggleMenu() {
-    document.getElementById('navMenu').classList.toggle('show');
-  }
-
-  window.addEventListener("scroll", revealOnScroll);
-  window.addEventListener("load", () => {
-    typeRole();
-    typeDesc();
-    revealOnScroll();
-    setTimeout(() => {
-      music.play().then(() => {
-        musicBtn.classList.add("playing");
-      }).catch(() => {});
-    }, 1000);
-  });
-
-  const canvas = document.getElementById('stars');
-  const ctx = canvas.getContext('2d');
-  let w = canvas.width = window.innerWidth;
-  let h = canvas.height = window.innerHeight;
-
-  const stars = Array(100).fill().map(() => ({
-    x: Math.random() * w,
-    y: Math.random() * h,
-    radius: Math.random() * 1.5,
-    speed: Math.random() * 1 + 0.5
-  }));
-
-  function drawStars() {
-    ctx.clearRect(0, 0, w, h);
-    ctx.fillStyle = '#ffffff';
-    stars.forEach(star => {
-      ctx.beginPath();
-      ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
-      ctx.fill();
-      star.y += star.speed;
-      if (star.y > h) {
-        star.y = 0;
-        star.x = Math.random() * w;
+    function typeRole() {
+      const el = document.getElementById('typing-role');
+      if (roleChar < roles[roleIndex].length) {
+        el.textContent += roles[roleIndex][roleChar++];
+        setTimeout(typeRole, 100);
+      } else {
+        setTimeout(() => {
+          el.textContent = "";
+          roleChar = 0;
+          roleIndex = (roleIndex + 1) % roles.length;
+          typeRole();
+        }, 1500);
       }
-    });
-    requestAnimationFrame(drawStars);
-  }
-
-  drawStars();
-  window.addEventListener('resize', () => {
-    w = canvas.width = window.innerWidth;
-    h = canvas.height = window.innerHeight;
-  });
-
-  const music = document.getElementById("bgMusic");
-  const musicBtn = document.querySelector(".music-player");
-
-  function toggleMusic() {
-    if (music.paused) {
-      music.play();
-      musicBtn.classList.add("playing");
-    } else {
-      music.pause();
-      musicBtn.classList.remove("playing");
     }
-  }
-</script></body>
-</html>
+
+    function typeDesc() {
+      const el = document.getElementById('typing-desc');
+      if (descChar < desc.length) {
+        el.textContent += desc[descChar++];
+        setTimeout(typeDesc, 40);
+      }
+    }
+
+    // Fungsi untuk efek typing di bagian Hosting
+    function typeHostingText() {
+      const el = document.getElementById('next-gen-typing');
+      const currentText = hostingTexts[hostingIndex];
+      
+      if (isDeleting) {
+        // Mode menghapus
+        if (hostingChar > 0) {
+          el.textContent = currentText.substring(0, hostingChar - 1);
+          hostingChar--;
+          hostingTypingSpeed = 50; // Lebih cepat saat menghapus
+        } else {
+          isDeleting = false;
+          hostingIndex = (hostingIndex + 1) % hostingTexts.length;
+          hostingTypingSpeed = 100;
+        }
+      } else {
+        // Mode mengetik
+        if (hostingChar < currentText.length) {
+          el.textContent = currentText.substring(0, hostingChar + 1);
+          hostingChar++;
+          hostingTypingSpeed = 100;
+        } else {
+          isDeleting = true;
+          hostingTypingSpeed = 1500; // Jeda sebelum menghapus
+        }
+      }
+      
+      setTimeout(typeHostingText, hostingTypingSpeed);
+    }
+
+    function revealOnScroll() {
+      document.querySelectorAll("section").forEach(sec => {
+        const top = sec.getBoundingClientRect().top;
+        if (top < window.innerHeight * 0.85) sec.classList.add("show");
+      });
+    }
+
+    function toggleMenu() {
+      document.getElementById('navMenu').classList.toggle('show');
+    }
+
+    window.addEventListener("scroll", revealOnScroll);
+    window.addEventListener("load", () => {
+      typeRole();
+      typeDesc();
+      typeHostingText(); // Mulai efek typing untuk hosting
+      revealOnScroll();
+      setTimeout(() => {
+        music.play().then(() => {
+          musicBtn.classList.add("playing");
+        }).catch(() => {});
+      }, 1000);
+    });
+
+    const canvas = document.getElementById('stars');
+    const ctx = canvas.getContext('2d');
+    let w = canvas.width = window.innerWidth;
+    let h = canvas.height = window.innerHeight;
+
+    const stars = Array(100).fill().map(() => ({
+      x: Math.random() * w,
+      y: Math.random() * h,
+      radius: Math.random() * 1.5,
+      speed: Math.random() * 1 + 0.5
+    }));
+
+    function drawStars() {
+      ctx.clearRect(0, 0, w, h);
+      ctx.fillStyle = '#ffffff';
+      stars.forEach(star => {
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+        ctx.fill();
+        star.y += star.speed;
+        if (star.y > h) {
+          star.y = 0;
+          star.x = Math.random() * w;
+        }
+      });
+      requestAnimationFrame(drawStars);
+    }
+
+    drawStars();
+    window.addEventListener('resize', () => {
+      w = canvas.width = window.innerWidth;
+      h = canvas.height = window.innerHeight;
+    });
+
+    const music = document.getElementById("bgMusic");
+    const musicBtn = document.querySelector(".music-player");
+
+    function toggleMusic() {
+      if (music.paused) {
+        music.play();
+        musicBtn.classList.add("playing");
+      } else {
+        music.pause();
+        musicBtn.classList.remove("playing");
+      }
+    }
+    
+    // Fungsi untuk button hosting
+    document.querySelector('.hosting-button').addEventListener('click', function() {
+      window.open('https://dhekz-panel-shop.vercel.app/product', '_blank');
+    });
+  </script>
+</body>
+      </html>
